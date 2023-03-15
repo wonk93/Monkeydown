@@ -71,14 +71,12 @@ const Game = {
   
     generateObstacles() {
       if (this.framesCounter % 300 === 0) {
-        // mas pequeño = menos frecuencia, por lo tanto, mas rapido se generan
-        this.obstacles.push(new Obstacle(this.ctx));
+        this.obstacles.push(new Plataform(this.ctx));
         
       }
     },
   
     clearObstacles() {
-      // no sé si está bien
       this.obstacles = this.obstacles.filter(function (obs) {
         return obs.posY >= 0;
       });
@@ -96,8 +94,8 @@ const Game = {
       });
     },
   
-    gameOver() {
+    /*gameOver() {
       clearInterval(this.interval);
-    },
+    },*/
   };
   

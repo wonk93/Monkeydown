@@ -47,7 +47,7 @@ move(){
     /*this.posY -= this.velY
     if(this.posY <= this.height){
         this.posY = 1300;*/
-        const jungle = 5;
+        const jungle = 2;
         this.imageYs = this.imageYs.map(y => y + jungle);
         // If first road image if not visible anymore we move it back on top
         if (this.imageYs[0] > this.height) {
