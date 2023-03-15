@@ -11,7 +11,7 @@ class Monkey {
       this.image.src = "./Images/Monkey.jpg";
   
       this.posX = 250 - 76 / 2;
-      this.posY = this.gameHeight - this.height - 20;
+      this.posY = this.gameHeight - this.height - 100;
   
       this.keys = keys;
   
