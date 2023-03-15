@@ -1,4 +1,4 @@
-class Monkeyfall {
+class Monkey {
     constructor(ctx, gameW, gameH, keys) {
       this.ctx = ctx;
       this.gameWidth = gameW;
@@ -8,7 +8,7 @@ class Monkeyfall {
       this.height = 100;
   
       this.image = new Image();
-      this.image.src = "./images/car.png";
+      this.image.src = "./Images/Monkey.jpg";
   
       this.posX = 250 - 76 / 2;
       this.posY = this.gameHeight - this.height - 20;
