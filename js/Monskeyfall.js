@@ -32,12 +32,12 @@ class Monkey {
       document.addEventListener("keydown", (e) => {
         switch (e.keyCode) {
           case this.keys.LEFT:
-            if (this.posX >= 80) {
+            if (this.posX >= 40) {
               this.posX -= 20;
             }
             break;
           case this.keys.RIGHT:
-            if (this.posX + this.width <= this.gameWidth - 80) {
+            if (this.posX + this.width <= this.gameWidth - 40) {
               this.posX += 20;
             }
             break;
