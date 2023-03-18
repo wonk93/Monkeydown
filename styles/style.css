@@ -3,8 +3,6 @@ body {
   text-align: center;
   background-image: url("../Images/selva.jpg");
   background-size: cover;
-  /* width: 100%; */
-  /* height: 100%; */
 }
 
 .game-intro {
@@ -14,7 +12,8 @@ body {
 
 .game-intro p {
   font-size: 18px;
-  font-family: "Verdana"
+  font-family: "Verdana";
+  color: white;
 }
 
 .logo-img {

@@ -2,15 +2,15 @@ class Plataform {
     constructor(ctx) {
       this.ctx = ctx;
   
-      // para que el width sea Random
+      
       this.minWidth = 80;
       this.maxWidth = 250;
       this.width = Math.floor(
         Math.random() * (this.maxWidth - this.minWidth + 1) + this.minWidth
       );
-      this.height = 30;
+      this.height = 20;
   
-     // para que la posición en el eje x sea Random 
+    
       this.minPosX = 80
       this.maxPosX = 500 - 80;
       this.posX = Math.floor (

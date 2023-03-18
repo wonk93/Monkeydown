@@ -15,8 +15,6 @@ class Jungle {
     }
 
 draw() {
-    /*this.ctx.drawImage(this.image, this.posX, this.posY, this.width, this.height);
-    this.ctx.drawImage(this.image, this.posX, this.posY - this.height, this.width, this.height); */
     this.move()
     this.ctx.drawImage(
         this.image,
@@ -44,12 +42,9 @@ draw() {
 
 
 move(){
-    /*this.posY -= this.velY
-    if(this.posY <= this.height){
-        this.posY = 1300;*/
+
         const jungle = 2;
         this.imageYs = this.imageYs.map(y => y + jungle);
-        // If first road image if not visible anymore we move it back on top
         if (this.imageYs[0] > this.height) {
           this.imageYs.push(this.imageYs[2] - this.height);
           this.imageYs.shift();

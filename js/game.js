@@ -62,7 +62,7 @@ const Game = {
       this.background.draw();
       this.player.draw();
       this.obstacles.forEach(function (obs) {
-        obs.draw(); // es un array de obstaculos, tiene que recorrerlo y pintar 1 a 1
+        obs.draw(); 
       });
     },
     clear() {
@@ -94,8 +94,8 @@ const Game = {
       });
     },
   
-    /*gameOver() {
+    gameOver() {
       clearInterval(this.interval);
-    },*/
+    },
   };
   
