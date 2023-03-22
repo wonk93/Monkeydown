@@ -25,6 +25,8 @@ class Plataform {
   
       this.ctx.fillRect(this.posX, this.posY, this.width, this.height);
       this.ctx.fillStyle = '#804000';
+
+      
       this.move();
       }
       

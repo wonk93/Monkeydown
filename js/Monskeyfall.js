@@ -12,8 +12,11 @@ class Monkey {
   
       this.posX = 250 - 76 / 2;
       this.posY = this.gameHeight - this.height - 400;
+      this.gravity = 0.2;
   
       this.keys = keys;
+
+      this.bullets = [];
   
       this.setListeners();
     }
@@ -25,7 +28,19 @@ class Monkey {
         this.posY,
         this.width,
         this.height
-      );
+        )
+       /* this.bullets.forEach(function(bullet){
+          bullet.draw();
+        })
+        this.clearBullets();
+      }*/
+    }
+
+    move() {
+      if (this.posY < this.posY) { 
+        this.posY = this.posY0;
+        this.velY = 1;
+      }
     }
   
     setListeners() {
@@ -41,6 +56,8 @@ class Monkey {
               this.posX += 20;
             }
             break;
+            case this.keys.SPACE:
+          this.shoot();
         }
       });
     }

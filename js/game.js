@@ -8,6 +8,7 @@ const Game = {
     background: undefined,
     player: undefined,
     obstacles: [],
+    enemy:[],
     blackgroundMusic: undefined,
   
     keys: {
@@ -46,7 +47,9 @@ const Game = {
         }
         this.clear();
         this.generateObstacles();
+        this.generateEnemy();
         this.drawAll();
+        this.clearEnemy();
         this.clearObstacles();
         if (this.isCollision()) {
           this.gameOver();
@@ -65,11 +68,26 @@ const Game = {
       this.background.draw();
       this.player.draw();
       this.obstacles.forEach( (obs) => {
-        obs.draw(); 
+        obs.draw(); });
+      this.enemy.forEach((obs) => {
+        obs.draw(this.framesCounter);
       });
-    },
+      },
+
     clear() {
       this.ctx.clearRect(0, 0, this.width, this.height);
+    },
+
+    generateEnemy() {
+      if (this.framesCounter % 800 === 0) {
+        this.enemy.push(new Enemy(this.ctx, this.width, this.height));
+    }
+  },
+
+    clearEnemy() {
+      this.enemy = this.enemy.filter(function (obs) {
+        return obs.posY >= 0;
+      });
     },
   
     generateObstacles() {
