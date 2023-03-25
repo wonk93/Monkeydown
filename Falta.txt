@@ -1,0 +1,6 @@
+score
+colision murcielago
+vidas
+animación mvp
+fondo murcielago
+disparos

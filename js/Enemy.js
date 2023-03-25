@@ -9,7 +9,7 @@ class Enemy {
     this.height = 50;
 
     this.image = new Image();
-    this.image.src = "./Images/enemy.jpg";
+    this.image.src = "./Images/murcielago1.png";
     this.image.frames = 3;
     this.image.framesIndex = 0;
 

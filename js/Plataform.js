@@ -1,15 +1,18 @@
 class Plataform {
     constructor(ctx) {
       this.ctx = ctx;
-     
+      this.image = new Image ();
+      this.image.src = "./Images/plataforma.png"
+      this.width = 100;
+      this.height = 27;
   
       
-      this.minWidth = 80;
+      /*this.minWidth = 80;
       this.maxWidth = 250;
       this.width = Math.floor(
         Math.random() * (this.maxWidth - this.minWidth + 1) + this.minWidth
       );
-      this.height = 20;
+      this.height = 20;*/
   
     
       this.minPosX = 80
@@ -23,8 +26,13 @@ class Plataform {
     }
     draw() {
   
-      this.ctx.fillRect(this.posX, this.posY, this.width, this.height);
-      this.ctx.fillStyle = '#804000';
+      this.ctx.drawImage(
+        this.image,
+        this.posX,
+        this.posY,
+        this.width,
+        this.height
+        )
 
       
       this.move();

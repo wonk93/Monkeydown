@@ -12,10 +12,12 @@ const Game = {
     blackgroundMusic: undefined,
   
     keys: {
+      SPACE: 32,
       LEFT: 37,
       UP: 38,
       RIGHT: 39,
       DOWN: 40,
+      SHOOTKEY: 81,
     },
   
     init() {
@@ -53,23 +55,23 @@ const Game = {
         this.drawAll();
         this.clearEnemy();
         this.clearObstacles();
-        if (this.isCollision()) {
-          this.gameOver();
+        if (this.isCollision() === true) {
         }
       }, 1000 / this.FPS);
     },
   
     reset() {
       this.background = new Jungle(this.ctx, this.width, this.height);
-      this.player = new Monkey(this.ctx, this.width, this.height, this.keys);
+      this.player = new Monkey(this.ctx, this.width, this.height, this.keys, this.isCollision());
+      this.obstacles = []; //new Plataform(this.ctx, this.width, this.height);
     },
 
     
   
     drawAll() {
       this.background.draw();
-      this.player.draw();
-      this.obstacles.forEach( (obs) => {
+      this.player.draw(this.framesCounter);
+      this.obstacles.forEach((obs) => {
         obs.draw(); });
       this.enemy.forEach((obs) => {
         obs.draw(this.framesCounter);
@@ -92,7 +94,7 @@ const Game = {
       });
     },
   
-    generateObstacles() {
+   generateObstacles() {
       if (this.framesCounter % 300 === 0) {
         this.obstacles.push(new Plataform(this.ctx));
         
@@ -106,16 +108,16 @@ const Game = {
     },
   
     isCollision() {
-      return this.obstacles.forEach((obs) => {
+      return this.obstacles.some((obs) => {//usar some que devuelve true or false
   
-       if (
+       return (
           this.player.posX <= obs.posY + obs.width &&
           this.player.posX + this.player.width >= obs.posX &&
           this.player.posY <= obs.posY + obs.height &&
           this.player.height + this.player.posY >= obs.posY
-        ){
+        )/*{
           this.player.posY = obs.posY - this.player.height;
-        }
+        }*/
       });
     },
   
