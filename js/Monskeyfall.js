@@ -56,8 +56,16 @@ class Monkey {
               this.posX += 20;
             }
             break;
-            case this.keys.SPACE:
-          this.shoot();
+            case this.keys.UP:
+              if (this.posY >= 30){
+                this.posY -=20;
+              }    
+              break; 
+            case this.keys.DOWN:
+                if (this.posY + this.height <= this.gameHeight - 30){
+                  this.posY +=20;
+                }    
+                break;        
         }
       });
     }
