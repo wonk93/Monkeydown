@@ -57,6 +57,9 @@ const Game = {
         this.clearObstacles();
         if (this.isCollision() === true) {
         }
+        if (this.isCollisionEnemy()){
+          this.gameOver();
+        }
       }, 1000 / this.FPS);
     },
   
@@ -118,6 +121,19 @@ const Game = {
         )/*{
           this.player.posY = obs.posY - this.player.height;
         }*/
+      });
+    },
+
+    isCollisionEnemy (){
+      return this.enemy.forEach((obs) => {
+        if (
+          this.player.posX <= obs.posY + obs.width &&
+          this.player.posX + this.player.width >= obs.posX &&
+          this.player.posY <= obs.posY + obs.height &&
+          this.player.height + this.player.posY >= obs.posY
+        ){
+          this.player.posY = obs.posY - this.player.height;
+        }
       });
     },
   
