@@ -16,8 +16,9 @@
 </p>
 
 <h2>Estructura de datos</h2>
-<h3>Game</h3>
-<p>const Game = {
+<h3>Game</h3> 
+'''Javascript
+    const Game = {
     canvas: undefined,
     ctx: undefined,
     width: undefined,
@@ -131,6 +132,7 @@
     this.bullets = [];
 
     this.setListeners();
-  } </p>
+  } 
+  '''
 
   <h2>Enlaces</h2>

@@ -56,7 +56,7 @@ const Game = {
         this.clearEnemy();
         this.clearObstacles();
         if (this.isCollision() === true) {
-        }
+        this.player.isCollision = true}
         if (this.isCollisionEnemy()){
           this.gameOver();
         }
