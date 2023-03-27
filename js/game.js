@@ -113,14 +113,15 @@ const Game = {
     isCollision() {
       return this.obstacles.some((obs) => {//usar some que devuelve true or false
   
-       return (
-          this.player.posX <= obs.posY + obs.width &&
-          this.player.posX + this.player.width >= obs.posX &&
-          this.player.posY <= obs.posY + obs.height &&
-          this.player.height + this.player.posY >= obs.posY
-        )/*{
-          this.player.posY = obs.posY - this.player.height;
-        }*/
+        if (this.player.posX <= obs.posY + obs.width &&
+                this.player.posX + this.player.width >= obs.posX &&
+                this.player.posY <= obs.posY + obs.height &&
+                this.player.height + this.player.posY >= obs.posY) {
+          
+          return true;
+        }
+         return false;
+
       });
     },
 

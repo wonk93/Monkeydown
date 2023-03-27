@@ -75,15 +75,23 @@ class Monkey {
       switch (e.keyCode) {
         case this.keys.LEFT:
           if (this.posX >= 40) {
-            this.image.src = "./Images/Monkeyflyleft.png";
+
+            if (this.isCollision) {
+              this.image.src = "./Images/spriteWalkingLeft.png";
+              this.isCollision=false;
+            } else {
+              this.image.src = "./Images/MonkeyflyLeft.png";
+            }
 
             this.posX -= 20;
           }
           break;
         case this.keys.RIGHT:
+       
           if (this.posX + this.width <= this.gameWidth - 40) {
             if (this.isCollision) {
               this.image.src = "./Images/spriteWalkingRight.png";
+              this.isCollision=false;
             } else {
               this.image.src = "./Images/Monkeyfly.png";
             }

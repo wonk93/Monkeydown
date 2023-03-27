@@ -17,7 +17,7 @@
 
 <h2>Estructura de datos</h2>
 <h3>Game</h3>
-<p>//const Game = {
+<p>const Game = {
     canvas: undefined,
     ctx: undefined,
     width: undefined,
@@ -134,4 +134,3 @@
   } </p>
 
   <h2>Enlaces</h2>
-  
